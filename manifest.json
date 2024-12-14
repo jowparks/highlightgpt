@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Highlight Assist",
+  "version": "1.0",
+  "description": "Send highlighted text to GPT-4 and display response in a separate extension window.",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_title": "ChatGPT Highlight Assist"
+  }
+}
